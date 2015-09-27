@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+
+{% block head %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="{{ description }}">
+    <meta name="author" content="{{ author }}">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>
+        {% block title %}{{ pagetitle }}{% endblock %}
+    </title>
+
+  {% block stylesheets %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/dashboard.css" %}" rel="stylesheet">
+  {% endblock %}
+
+  {% block core_js %}
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="{% static "js/bootstrap.min.js" %}"></script>
+      <script src="{% static "js/search_person.js" %}"></script>
+
+  {% endblock %}
+
+  {% block typeahead %}
+  {% include 'display/elements/typeahead_ac.html' %}
+  {% endblock %}
+
+  </head>
+{% endblock %}
+
+  <body>
+
+    {% block top_navbar %}
+        {% include "display/top_navbar.html" %}
+    {% endblock %}
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            {% block left_sidebar %}
+                {% include "display/left_sidebar.html" %}
+            {% endblock %}
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            {% block main %}
+
+            {% endblock %}
+        </div>
+
+      </div>
+    </div>
+
+    {% block javascript %}
+
+    {% endblock %}
+
+  </body>
+</html>
+
+

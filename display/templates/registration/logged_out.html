@@ -1,0 +1,11 @@
+{% extends 'display/base.html' %}
+
+{% block main %}
+    <br><br><br><br>
+    <div class="col-sm-offset-2 col-sm-8">
+    <div class="content">
+        <h3>Thank you for using Zinoplex today!</h3>
+        <p><a href="{% url 'django.contrib.auth.views.login' %}">Log in again</a></p>
+    </div>
+    </div>
+{% endblock %}

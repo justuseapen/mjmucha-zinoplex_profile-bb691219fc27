@@ -1,0 +1,12 @@
+<div class="panel-heading">
+                Path to Connect
+              </div>
+              <div class="panel-body" style='height: 200px'>
+                  {% for item in profile.path %}
+                  <div class="list-group">
+                      <div class="list-group-item ">
+                        <a href="#">{{ item.name }}</a>
+                      </div>
+                    </div>
+                  {% endfor %}
+              </div>
