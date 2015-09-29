@@ -21,16 +21,14 @@
     <!-- Bootstrap core CSS -->
     {% load bootstrap3 %}
     {% bootstrap_css %}
-    {% bootstrap_javascript %}
 
     <!-- Custom styles for this template -->
     <link href="{% static "css/dashboard.css" %}" rel="stylesheet">
   {% endblock %}
 
   {% block core_js %}
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script src="{% static "js/bootstrap.min.js" %}"></script>
-      <script src="{% static "js/search_person.js" %}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
 
   {% endblock %}
 
